@@ -43,6 +43,11 @@ li{
 .flex-1{
     flex: 1;
 }
+
+.container{
+    padding: 50px;
+    ;
+}
 .row{
     width: 100%;
     max-width: 800px;
@@ -127,6 +132,12 @@ transition: all 300ms ease;
 .text--purple{
     color: #6030b1;
 }
+section:nth-child(even){
+    background-color: #f8f8f8;
+}
+.ection_title{
+    background-color: #f8f8f8;
+}
 .about-me__info--title{
     margin-bottom: 16px;
 }
@@ -149,4 +160,41 @@ margin-bottom: 20px;
 
 .about-me_img{
    width: 100%;
+}
+
+
+/* Languages / tech stack */
+
+.language_img{
+    width: 100%;
+    max-width: 100px;
+ transition: all 300ms;
+}
+.language_img:hover{
+    filter: brightness(80%);
+    opacity: 0.86;
+    transform: scale(0.9);
+   
+}
+.language{
+    width: 25%;
+display: flex;
+justify-content: center;
+position: relative;
+}
+.language_img--wrapper{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    padding: 25px 16px;
+    
+}
+.language_list{
+    display: flex;
+    width: 100%;
+    flex-wrap; wrap;
+}
+.language_name{
+    position: absolute;
+bottom: 0;;
 }
