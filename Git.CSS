@@ -194,6 +194,71 @@ margin-bottom: 20px;
     align-items:center;
     /* make wrapper exactly hug the image so hovering the wrapper equals hovering the image */
     padding: 0;
+    position: relative;
+}
+
+.language_link{
+    display: inline-block;
+}
+.language_link .language_img{
+    display: block;
+    cursor: pointer;
+}
+
+/* Small tooltip which appears in the upper-right after a 1s hover delay */
+.language_tooltip{
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #fff;
+    color: #6030b1;
+    border: 1px solid #6030b1;
+    box-shadow: 0 6px 18px rgba(96,48,177,0.08);
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    /* allow line-wrapping for longer descriptions and limit width */
+    white-space: normal;
+    max-width: 160px;
+    word-break: break-word;
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 160ms ease, transform 160ms ease;
+    pointer-events: none;
+    z-index: 20;
+}
+
+/* show tooltip only after a 0.5s hover delay on the image wrapper; hiding is immediate */
+.language_img--wrapper:hover .language_tooltip{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+}
+
+/* thumbs-up shake animation */
+.thumbs-up{
+    display: inline-block;
+    transform-origin: 50% 50%;
+    animation: thumb-shake 1.2s infinite linear;
+}
+
+@keyframes thumb-shake{
+    0%{ transform: translateX(0) rotate(0deg); }
+    10%{ transform: translateX(-1px) rotate(-8deg); }
+    20%{ transform: translateX(2px) rotate(6deg); }
+    30%{ transform: translateX(-1px) rotate(-4deg); }
+    40%{ transform: translateX(1px) rotate(2deg); }
+    100%{ transform: translateX(0) rotate(0deg); }
+}
+
+/* respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce){
+    .thumbs-up{ animation: none; }
+    .language_img--wrapper:hover .language_tooltip{ transition-delay: 0s; }
 }
 .language_list{
     display: flex;
