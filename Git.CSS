@@ -166,6 +166,31 @@ margin-bottom: 20px;
    width: 100%;
 }
 
+/* Projects */
+.project_list{
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+.project{
+    margin: 0 12px;
+}
+.project_wrapper{
+    max-width: 720px;
+    display: flex;
+    justify-content: center;
+}
+.project_img{
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    display: block;
+}
+
 
 /* Languages / tech stack */
 
