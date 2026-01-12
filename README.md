@@ -54,7 +54,7 @@ Option B: Static hosting (Netlify/Vercel)
 - Optional contact section with form or mailto CTA
 
 ## Author
-- Coder name: **Dan DeBugger** — cheeky and on-the-nose.
+- Coder name: **Dan DeBugger.
 
 ## License
 This portfolio is intended for personal use. You may adapt the structure and styles; please replace content and assets with your own.
