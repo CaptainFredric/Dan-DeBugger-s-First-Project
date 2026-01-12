@@ -6,6 +6,10 @@ body {
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 *, *::before, *::after{
     box-sizing: inherit;
 }
@@ -166,31 +170,155 @@ margin-bottom: 20px;
    width: 100%;
 }
 
+/* Accessibility utility */
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* Projects */
 .project_list{
     list-style: none;
-    padding: 0;
-    margin: 20px 0 0 0;
+    padding: 40px 0 0 0;
+    margin: 10px 0 0 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .project{
-    margin: 0 12px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
 }
 .project_wrapper{
+    width: 100%;
     max-width: 720px;
     display: flex;
     justify-content: center;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.45);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
 }
 .project_img{
     width: 100%;
-    max-width: 640px;
+    max-width: 720px;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     display: block;
+    transition: transform 500ms ease, filter 500ms ease;
+}
+.project:last-child{
+    margin-bottom: 0;
 }
 
+.project_wrapper:before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+background-color: #1c1d25;
+opacity: 0;
+transition: opacity 450ms ease;
+z-index: 1;
+}
+
+.project:hover .project_wrapper:before{
+    opacity: 0.7;
+}
+
+.project:hover .project_img{
+    transform: scale(1.07);
+    filter: blur(5px);
+}
+
+/* Project Description Overlay */
+.project_description{
+    position: absolute;
+    top: 50%;
+    left: 48px;
+    transform: translateY(0);
+    max-width: 550px;
+    z-index: 2;
+    opacity: 0;
+    transition: transform 450ms ease, opacity 300ms ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.project:hover .project_description{
+    opacity: 1;
+    transform: translateY(-50%);
+}
+
+.project_description--title,
+.project_description--sub-title,
+.project_description--para{
+    text-align: left;
+}
+
+.project_description--title{
+    color: #fff;
+    font-size: 40px;
+    margin: 0;
+}
+
+.project_description--sub-title{
+    color: #6030b1;
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.project_description--para{
+    color: #f0f0f0;
+    margin: 16px 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Links live in a sibling div in the HTML, so position them over the card */
+.project_description--links{
+    position: absolute;
+    left: 48px;
+    bottom: 28px;
+    z-index: 3;
+    display: flex;
+    gap: 16px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: transform 450ms ease, opacity 300ms ease;
+}
+
+.project:hover .project_description--links{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project_description--links a{
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+    transition: color 300ms ease, transform 300ms ease;
+    cursor: pointer;
+}
+
+.project_description--links a:hover{
+    color: #6030b1;
+    transform: scale(1.15);
+}
 
 /* Languages / tech stack */
 
@@ -308,15 +436,53 @@ margin-bottom: 20px;
     opacity: 1;
 }
 
-/* Project Image */
-.project_img{
-    width: 100%;
-    
+/* (project styles consolidated above) */
+
+/* Contact section */
+#contact .row{
+    max-width: 800px;
+    text-align: center;
 }
-.project_wrapper{
+.contact__cta{
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+.contact__links{
     display: flex;
-    box-shadow: 0 20px 80px rgba(0,0,0,0.45);
-    border-radius: 20px;
-    overflow: hidden;
-    
+    justify-content: center;
+    gap: 20px;
 }
+.contact__link{
+    color: #6030b1;
+    font-size: 24px;
+    text-decoration: none;
+    transition: transform 200ms ease, color 200ms ease;
+}
+.contact__link:hover{
+    color: #5d3eff;
+    transform: translateY(-1px) scale(1.1);
+}
+
+/* Social links sizing */
+.about-me__links .about-me__link{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 8px;
+    color: #6030b1;
+    transition: transform 200ms ease, color 200ms ease;
+}
+.contact__link:hover{
+    color: #5d3eff;
+    transform: translateY(-1px) scale(1.1);
+}
+
+.contact__note{
+    font-size: 13px;
+    margin-top: 16px;
+    opacity: 0.75;
+    color: #242424;
+}
+
