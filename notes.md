@@ -13,6 +13,18 @@
 - **Email Links**: Updated to `captainarmoreddude@gmail.com` with `target="_blank" rel="noopener"`.
 - **Removed duplicate CSS**: Deleted old conflicting `.project_description`, `.project_list`, hover rules that were overriding each other.
 
+## Brand Icon (Jan 13–14)
+- **Final Icon (Jan 14)**: Replaced custom SVG with a professional PNG shield beetle design.
+- File: `assets/dandebugger-icon.png` (512×512 optimized PNG, navy/indigo shield with white "DB" and cyan accents).
+- Usage:
+  - **Favicon**: Wired in `Git.html` via `<link rel="icon" href="./assets/dandebugger-icon.png" type="image/png">`.
+  - **Navbar Logo**: Added to `.personal_logo` alongside "Dan DeBugger" text; styled at 32×32px with flex layout and 10px gap.
+- Design notes:
+  - Shield/beetle hybrid with "DB" monogram in bold typography.
+  - Cyan IO pins and antennae reinforce developer/tech aesthetic.
+  - Clean, professional look suitable for use as avatar across platforms (GitHub, LinkedIn, etc.).
+- Previous iteration (Jan 13): Experimented with custom SVG designs (geometric shell, syntax shell, hex-processor beetle) before settling on the final PNG.
+
 ## Context Points
 - Brand name: Dan DeBugger — cheeky, playful, confident. Real identity: Aden Cisneros.
 - Color palette: primary `#6030b1`, hover `#5d3eff`, text `#242424`, dark overlay `#1c1d25`.
@@ -80,4 +92,4 @@ python3 -m http.server 8080
 ```
 
 ---
-Session ended Jan 12, 2026. All major features working. Ready to expand projects and deploy.
+Session ended Jan 14, 2026. Brand icon finalized and integrated into navbar + favicon. All major features working. Ready to expand projects and deploy.

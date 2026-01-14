@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Dan DeBugger Hex-Processor Beetle">
+  <!-- Hex-Processor Beetle: deep indigo hex with cyan traces forming Dᗡ, IO pins, and head line -->
+
+  <defs>
+    <style>
+      .base { fill: #1B1F7A; }
+      .trace { stroke: #20E3FF; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+
+  <!-- Flat-top hexagon (center 256,300; radius 170) -->
+  <polygon class="base" points="
+    171,152.8 341,152.8 426,300 341,447.2 171,447.2 86,300
+  " />
+
+  <!-- Head separation line (top ~20%) -->
+  <line class="trace" x1="171" y1="212" x2="341" y2="212" stroke-width="16" />
+
+  <!-- Antennae: two short vertical lines from top of head section -->
+  <line class="trace" x1="240" y1="152.8" x2="240" y2="136" stroke-width="10" />
+  <line class="trace" x1="272" y1="152.8" x2="272" y2="136" stroke-width="10" />
+
+  <!-- IO pins: three per side -->
+  <line class="trace" x1="171" y1="260" x2="145" y2="260" stroke-width="10" />
+  <line class="trace" x1="171" y1="320" x2="145" y2="320" stroke-width="10" />
+  <line class="trace" x1="171" y1="380" x2="145" y2="380" stroke-width="10" />
+  <line class="trace" x1="341" y1="260" x2="367" y2="260" stroke-width="10" />
+  <line class="trace" x1="341" y1="320" x2="367" y2="320" stroke-width="10" />
+  <line class="trace" x1="341" y1="380" x2="367" y2="380" stroke-width="10" />
+
+  <!-- Center spine: negative space; draw a thin dark line to emphasize split -->
+  <line x1="256" y1="212" x2="256" y2="447.2" stroke="#0b0c10" stroke-opacity="0.25" stroke-width="8" stroke-linecap="round" />
+
+  <!-- Circuit D traces: angular, following hex geometry -->
+  <!-- Left mirrored D (ᗡ) trace -->
+  <polyline class="trace" points="
+    256,222  224,252  206,320  224,388  256,418
+  " stroke-width="18" fill="none" />
+
+  <!-- Right normal D trace -->
+  <polyline class="trace" points="
+    256,222  288,252  306,320  288,388  256,418
+  " stroke-width="18" fill="none" />
+</svg>
