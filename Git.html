@@ -6,12 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dan DeBugger</title>
+    <meta name="description" content="Dan DeBugger (Aden Cisneros) — frontend software engineer portfolio. Projects, tech stack, contact, and resume.">
+
+    <!-- Social preview -->
+    <meta property="og:title" content="Dan DeBugger">
+    <meta property="og:description" content="Frontend software engineer portfolio — projects, tech stack, contact, and resume.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/dandebugger-icon.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Dan DeBugger">
+    <meta name="twitter:description" content="Frontend software engineer portfolio — projects, tech stack, contact, and resume.">
+    <meta name="twitter:image" content="./assets/dandebugger-icon.png">
+
     <link rel="stylesheet" href="./Git.CSS">
     <link rel="icon" href="./assets/dandebugger-icon.png" type="image/png">
     <script src="https://kit.fontawesome.com/80bc3716fe.js" crossorigin="anonymous"></script>
+    <script src="./Git.js" defer></script>
 </head>
 
 <body>
+    <a class="skip-link" href="#languages">Skip to main content</a>
     <section id="about-me">
         <nav>
             <div class="personal_logo">
@@ -57,7 +71,7 @@
                         </a>
                     </div>
                 <figure class="about-me_img--container">
-                    <img src="./assets/undraw_websites.svg" class="about-me__img" alt="Websites Illustration">
+                    <img src="./assets/undraw_websites.svg" class="about-me__img" alt="Websites Illustration" loading="lazy" decoding="async">
                 </figure>
                 </div>
                 
@@ -154,74 +168,10 @@
         <div class="container">
             <div class="row">
                 <h1 class="section__title">These are my <span class="text--purple"> Projects</span></h1>
-            <ul class="project_list">
-                <li class="project"> <div class="project_wrapper">
-                    <img src="./assets/project_placeholder.svg" alt="Project Illustration" class="project_img">
-                    <div class="project_description">
-                        <h3 class="project_description--title">Project Example, If I Had One</h3>
-                    <h4 class="project_description--sub-title">
-                        HTML, CSS, JavaScript, Vue, Vuex, Nuxt
-                    </h4>
-                    <p class="project_description--para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis unde dolores commodi suscipit assumenda, dolorum veritatis tempora magni numquam vero accusamus porro? Tempora esse enim impedit blanditiis accusamus consectetur maiores!</p>
-                    </div>
-                    <div class="project_description--links">
-                        <a href="https://github.com/CaptainFredric/Dan-DeBugger-s-First-Project" target="_blank" rel="noopener">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span class="sr-only">GitHub</span>
-                        </a>
-                        <a href="https://github.com/CaptainFredric/Dan-DeBugger-s-First-Project" target="_blank" rel="noopener">
-                            <i class="fas fa-link" aria-hidden="true"></i>
-                            <span class="sr-only">Live Link</span>
-                        </a>
-                    </div>
-                </div>
-
-                </li>
-                <li class="project"> <div class="project_wrapper">
-                    <img src="./assets/project_placeholder.svg" alt="Project Illustration" class="project_img">
-                    <div class="project_description">
-                        <h3 class="project_description--title">Project Example, if I had one</h3>
-                    <h4 class="project_description--sub-title">
-                        HTML, CSS, JavaScript, Vue, Vuex, Nuxt
-                    </h4>
-                    <p class="project_description--para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis unde dolores commodi suscipit assumenda, dolorum veritatis tempora magni numquam vero accusamus porro? Tempora esse enim impedit blanditiis accusamus consectetur maiores!</p>
-                    </div>
-                    <div class="project_description--links">
-                        <a href="https://github.com/CaptainFredric/Dan-DeBugger-s-First-Project" target="_blank" rel="noopener">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span class="sr-only">GitHub</span>
-                        </a>
-                        <a href="https://github.com/CaptainFredric/Dan-DeBugger-s-First-Project" target="_blank" rel="noopener">
-                            <i class="fas fa-link" aria-hidden="true"></i>
-                            <span class="sr-only">Live Link</span>
-                        </a>
-                    </div>
-                </div>
-
-                </li>
-                <li class="project"> <div class="project_wrapper">
-                    <img src="./assets/project_placeholder.svg" alt="Project Illustration" class="project_img">
-                    <div class="project_description">
-                        <h3 class="project_description--title">Project Example, if I had one</h3>
-                    <h4 class="project_description--sub-title">
-                        HTML, CSS, JavaScript, Vue, Vuex, Nuxt
-                    </h4>
-                    <p class="project_description--para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis unde dolores commodi suscipit assumenda, dolorum veritatis tempora magni numquam vero accusamus porro? Tempora esse enim impedit blanditiis accusamus consectetur maiores!</p>
-                    </div>
-                    <div class="project_description--links">
-                        <a href="https://github.com/CaptainFredric/Dan-DeBugger-s-First-Project" target="_blank" rel="noopener">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span class="sr-only">GitHub</span>
-                        </a>
-                        <a href="https://github.com/CaptainFredric/Dan-DeBugger-s-First-Project" target="_blank" rel="noopener">
-                            <i class="fas fa-link" aria-hidden="true"></i>
-                            <span class="sr-only">Live Link</span>
-                        </a>
-                    </div>
-                </div>
-
-                </li>
-            </ul>
+            <ul class="project_list" id="project_list" aria-label="Projects"></ul>
+            <noscript>
+                <p style="text-align:center; margin-top: 14px;">Projects require JavaScript to display.</p>
+            </noscript>
             </div>
         </div>
     </section>
@@ -282,6 +232,11 @@
             </div>
         </div>
     </footer>
+
+    <button class="back-to-top" type="button" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        <span class="sr-only">Back to top</span>
+    </button>
 </body>
 
 </html>
