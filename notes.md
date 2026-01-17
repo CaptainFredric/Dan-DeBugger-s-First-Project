@@ -93,3 +93,54 @@ python3 -m http.server 8080
 
 ---
 Session ended Jan 14, 2026. Brand icon finalized and integrated into navbar + favicon. All major features working. Ready to expand projects and deploy.
+
+---
+
+# Project Notes — Session 3 (Jan 17, 2026)
+
+## What Changed
+- **Projects are now data-driven (no more duplicated HTML cards).**
+  - `Git.html`: replaced the three hardcoded `<li class="project">...` blocks with a single container: `<ul class="project_list" id="project_list" aria-label="Projects"></ul>`.
+  - `Git.js` (new): added a `projects` array and a renderer that builds the same card markup in JS.
+  - Update projects by editing the `projects` array in `Git.js` (title, stack/subtitle, description, image, GitHub URL, live URL). Set `liveUrl: ""` to hide the live link.
+
+- **Microinteractions added**
+  - Scroll reveal on project cards using `IntersectionObserver` (`.reveal` → `.is-visible`).
+  - Added subtle `:active` press feedback to `.contact__link` and `.resume__action`.
+  - Motion-safe: honors `prefers-reduced-motion`.
+
+- **“One more thing” added: Back-to-top button**
+  - `Git.html`: added `<button id="backToTop" class="back-to-top" ...>` near the end of `<body>`.
+  - `Git.js`: shows after scrolling ~500px and scrolls to top (smooth unless reduced motion).
+  - `Git.CSS`: styles `.back-to-top` and `.back-to-top.is-visible`.
+
+- **Resume PDF updated**
+  - Local command used: copied a real PDF into `assets/DanDeBugger_Resume.pdf` (overwriting the placeholder).
+
+## Files Touched
+- `Git.html`
+  - Adds `<script src="./Git.js" defer></script>`.
+  - Projects list is now empty and populated by JS.
+  - Adds the back-to-top button markup.
+- `Git.js` (new)
+  - Renders projects + scroll reveal + back-to-top behavior.
+- `Git.CSS`
+  - Adds `.reveal` animation styles and reduced-motion fallback.
+  - Adds `:active` press states.
+  - Adds back-to-top button styles.
+
+## Preview / Environment Notes
+- Node was not available when attempting `node --check Git.js` (command not found). This is fine; the site is plain HTML/CSS/JS.
+- If `python3 -m http.server 8080` is busy, use another port:
+
+```bash
+python3 -m http.server 8090
+# then http://localhost:8090/Git.html
+```
+
+## Next Time (High-Value TODO)
+- Replace placeholder project entries in `Git.js` with real projects (and real images).
+- Consider adding `tabindex="0"` support / focus styling on `.project_wrapper` if you want keyboard users to access overlays (currently hover-driven).
+
+---
+Session ended Jan 17, 2026. Projects are now maintainable via a single JS data source; added scroll reveal + back-to-top.
