@@ -29,8 +29,37 @@
     <section id="about-me">
         <nav>
             <div class="personal_logo">
-                <img src="./assets/dandebugger-icon.png" alt="Dan DeBugger Icon" class="logo-icon">
-                <span>Dan DeBugger</span>
+                <!-- Orbit overlay spans the whole wordmark (icon + text) so the beetle truly loops around it -->
+                <span class="brand-orbit" aria-hidden="true">
+                    <span class="brand-orbit__fly">
+                        <span class="brand-orbit__beetle-wrap">
+                            <svg class="brand-icon-trail" viewBox="0 0 120 24" aria-hidden="true" focusable="false">
+                                <path class="brand-icon-trail__path brand-icon-trail__path--1" d="M6 12 L 114 12" />
+                                <path class="brand-icon-trail__path brand-icon-trail__path--2" d="M6 12 L 114 12" />
+                                <path class="brand-icon-trail__path brand-icon-trail__path--3" d="M6 12 L 114 12" />
+                            </svg>
+                            <svg class="brand-orbit__beetle" viewBox="0 0 512 512" focusable="false">
+                                <defs>
+                                    <clipPath id="eye-clip-nav">
+                                        <circle cx="256" cy="150" r="30"></circle>
+                                    </clipPath>
+                                    <filter id="beetle-keyout-nav" color-interpolation-filters="sRGB">
+                                        <feColorMatrix type="matrix" values="1 0 0 0 0
+                                            0 1 0 0 0
+                                            0 0 1 0 0
+                                            -1 -1 -1 0 3" />
+                                        <feComponentTransfer>
+                                            <feFuncA type="gamma" amplitude="1" exponent="1.1" offset="0" />
+                                        </feComponentTransfer>
+                                    </filter>
+                                </defs>
+                                <image href="./assets/dandebugger-icon.png" width="512" height="512" filter="url(#beetle-keyout-nav)"></image>
+                                <circle class="brand-icon-pupil" cx="256" cy="150" r="9" clip-path="url(#eye-clip-nav)"></circle>
+                            </svg>
+                        </span>
+                    </span>
+                </span>
+                <span class="brand-name">Dan DeBugger</span>
             </div>
             <ul class="nav_link-list">
                 <li>
@@ -47,12 +76,12 @@
         <div class="flex flex-1">
             <div class="about-me__info row">
                 <div class="about-me__info--container">
-                    <figure class="about-me__picture--mask">
+                    <figure class="about-me__picture--mask hero-entrance hero-entrance--photo">
                         <img src="./assets/ProfilephotoOld.jpg" class="about-me__picture" alt="Profile Photo">
                     </figure>
-                    <h1 class="about-me__info__title">Hey! I'm<span class="text--purple"> Dan DeBugger <span class="thumbs-up" aria-hidden="true">👍</span></span> </h1>
-                    <p class="about-me__info--para">I'm a <strong class="text--purple">frontend software engineer</strong> with a strong passion for building responsive and performant web applications with great user experiences that positively impact the world.</p>
-                    <div class="about-me__links">
+                    <h1 class="about-me__info__title hero-entrance hero-entrance--title">Hey! I'm<span class="text--purple"> Dan DeBugger <span class="thumbs-up" aria-hidden="true">👍</span></span> </h1>
+                    <p class="about-me__info--para hero-entrance hero-entrance--copy">I'm a <strong class="text--purple">frontend software engineer</strong> with a strong passion for building responsive and performant web applications with great user experiences that positively impact the world.</p>
+                    <div class="about-me__links hero-entrance hero-entrance--links">
                         <a href="https://www.linkedin.com/in/aden-cisneros/" class="about-me__link" target="_blank" rel="noopener">
                             <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                             <span class="sr-only">LinkedIn</span>
@@ -217,7 +246,26 @@
             <div class="footer__card">
                 <div class="footer__bottom">
                     <div class="footer__brand">
-                        <img class="footer__logo" src="./assets/dandebugger-icon.png" alt="Dan DeBugger beetle logo">
+                        <span class="brand-icon brand-icon--footer" aria-hidden="true">
+                            <svg class="brand-icon-svg" viewBox="0 0 512 512" focusable="false">
+                                <defs>
+                                    <clipPath id="eye-clip-footer">
+                                        <circle cx="256" cy="150" r="32"></circle>
+                                    </clipPath>
+                                    <filter id="beetle-keyout-footer" color-interpolation-filters="sRGB">
+                                        <feColorMatrix type="matrix" values="1 0 0 0 0
+                                            0 1 0 0 0
+                                            0 0 1 0 0
+                                            -1 -1 -1 0 3" />
+                                        <feComponentTransfer>
+                                            <feFuncA type="gamma" amplitude="1" exponent="1.1" offset="0" />
+                                        </feComponentTransfer>
+                                    </filter>
+                                </defs>
+                                <image href="./assets/dandebugger-icon.png" width="512" height="512" filter="url(#beetle-keyout-footer)"></image>
+                                <circle class="brand-icon-pupil" cx="256" cy="150" r="10" clip-path="url(#eye-clip-footer)"></circle>
+                            </svg>
+                        </span>
                         <div class="footer__brand-text">
                             <div class="footer__brand-name">Dan DeBugger</div>
                             <p class="footer__copyright">&copy; 2026 Aden Cisneros (Dan DeBugger). All rights reserved.</p>

@@ -144,3 +144,11 @@ python3 -m http.server 8090
 
 ---
 Session ended Jan 17, 2026. Projects are now maintainable via a single JS data source; added scroll reveal + back-to-top.
+
+---
+
+# Project Notes — Session 4 (Jan 17, 2026)
+
+## What Changed
+- **Nav hover underline**: Added a black pill-shaped bar that grows left-to-right on hover for the **Languages** and **Projects** nav links, then collapses toward the right when the cursor leaves. Implemented via `::after` on `.nav__link--anchor.link__hover-effect--black`.
+- **Refinement**: The underline is slightly rounded and uses a quick 220ms ease for a crisp, polished microinteraction.
